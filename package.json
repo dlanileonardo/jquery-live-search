@@ -1,0 +1,28 @@
+{
+  "name": "jquery.live.search",
+  "version": "0.0.1",
+  "description": "A simple, lightweight jQuery plugin for implement live-search.",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dlanileonardo/jquery-live-search.git"
+  },
+  "author": "Dlani Mendes",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "~0.4.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-qunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.3.0",
+    "grunt-compare-size": "~0.4.0",
+    "gzip-js": "~0.3.0"
+  }
+}
