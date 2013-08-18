@@ -35,7 +35,7 @@
                     resetFilter();
                 }
             });
-        }
+        };
 
         var preventSubmit = function() {
             $(opts.selectorInputSearch).keydown(function(e){
@@ -43,7 +43,7 @@
                     return false;
                 }
             });
-        }
+        };
 
         var filterElements = function(textElement) {
             var pattern = new RegExp(textElement, "igm");
@@ -60,16 +60,12 @@
                     return content.match(pattern);
                 }).show();
             }
-        }
+        };
 
         var filterAjax = function(page){
             $(opts.selectorContainer).find(opts.selectorToHide).remove();
-            var contentAppend = $(page).find(opts.selectorContainer);
             var items = [],
-                container,
-                startTime = Date.now(),
-                diffTime,
-                self;
+                container;
 
             // walk through the items on the next page
             // and add them to the items array
@@ -89,7 +85,7 @@
             $(opts.selectorContainer).append(items);
 
             filterElements(textElement);
-        }
+        };
 
         var resetFilter = function() {
             if (opts.selectorToHide) {
@@ -97,7 +93,7 @@
             } else {
                 $(selectorToSearch).show();
             }
-        }
+        };
 
         //Public function
         this.reFilter = function() {
@@ -106,7 +102,7 @@
 
         this.ajaxDone = function(data) {
             filterAjax(data);
-        }
+        };
 
         // initialize
         return init();
