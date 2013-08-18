@@ -1,4 +1,4 @@
-jquery-live-search
+jquery-live-search [![Build Status](https://travis-ci.org/dlanileonardo/jquery-live-search.png?branch=master)](https://travis-ci.org/dlanileonardo/jquery-live-search) 
 ==================
 
 Description:
