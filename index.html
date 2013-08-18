@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jquery-live-search by dlanileonardo</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jquery-live-search</h1>
+        <p>A simple, lightweight jQuery plugin for implement live-search.</p>
+
+        <p class="view"><a href="https://github.com/dlanileonardo/jquery-live-search">View the Project on GitHub <small>dlanileonardo/jquery-live-search</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/dlanileonardo/jquery-live-search/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/dlanileonardo/jquery-live-search/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/dlanileonardo/jquery-live-search">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="jquery-live-search--" class="anchor" href="#jquery-live-search--"><span class="octicon octicon-link"></span></a>jquery-live-search <a href="https://travis-ci.org/dlanileonardo/jquery-live-search"><img src="https://travis-ci.org/dlanileonardo/jquery-live-search.png?branch=master" alt="Build Status"></a> </h1>
+
+<h2>
+<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description:</h2>
+
+<p>A simple, lightweight jQuery plugin for implement live-search.</p>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements:</h2>
+
+<p>Simple Usage:</p>
+
+<pre><code>$.liveSearch({
+    selectorContainer: "ul",
+    selectorElementsToSearch: "li",
+    attributeToSearch: false,
+    selectorInputSearch: "#search-query",
+    selectorToHide: false,
+    selectorFixed: "li:first",
+});
+</code></pre>
+
+<p>Ajax Usage:</p>
+
+<pre><code>var objLiveSearch = $.liveSearch({
+    selectorContainer: "ul",
+    selectorElementsToSearch: "li",
+    attributeToSearch: false,
+    selectorInputSearch: "#search-query",
+    selectorToHide: "li",
+    selectorFixed: "li:first",
+    ajaxCallback: function(){
+        $.get("helpers/ajax-content.html", function(data){
+            objLiveSearch.ajaxDone(data);
+        }, 'html');
+    },
+});
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/dlanileonardo">dlanileonardo</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
