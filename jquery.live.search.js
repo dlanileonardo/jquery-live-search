@@ -26,10 +26,11 @@
             $(opts.selectorInputSearch).bind("keyup", function(){
                 textElement = $(this).val();
                 if ( textElement.length >= opts.minCharacters ){
-                    if ( opts.ajaxCallback )
+                    if ( opts.ajaxCallback ){
                         opts.ajaxCallback.call(this);
-                    else
+                    } else {
                         filterElements(textElement);
+                    }
                 }else if ( textElement.length === 0 ){
                     resetFilter();
                 }
@@ -38,7 +39,7 @@
 
         var preventSubmit = function() {
             $(opts.selectorInputSearch).keydown(function(e){
-                if(e.keyCode == 13){
+                if(e.keyCode === 13){
                     return false;
                 }
             });
@@ -91,10 +92,11 @@
         }
 
         var resetFilter = function() {
-            if (opts.selectorToHide)
+            if (opts.selectorToHide) {
                 $(selectorToSearch).parents(opts.selectorToHide).show();
-            else
+            } else {
                 $(selectorToSearch).show();
+            }
         }
 
         //Public function
