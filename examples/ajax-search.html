@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../jquery.instantsearch.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var objLiveSearch;
+                objLiveSearch = $.liveSearch({
+                    selectorContainer: "ul",
+                    selectorElementsToSearch: "li",
+                    attributeToSearch: false,
+                    selectorInputSearch: "#search-query",
+                    selectorToHide: "li",
+                    selectorFixed: "li:first",
+                    ajaxCallback: function(){
+                        $.get("helpers/ajax-content.html", function(data){
+                            objLiveSearch.ajaxDone(data);
+                        }, 'html');
+                    },
+
+               });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="text" id="search-query">
+        <ul>
+            <li>Header</li>
+        </ul>
+    </body>
+</html>

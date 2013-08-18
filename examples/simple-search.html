@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../jquery.instantsearch.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $.liveSearch({
+                    selectorContainer: "ul",
+                    selectorElementsToSearch: "li",
+                    attributeToSearch: false,
+                    selectorInputSearch: "#search-query",
+                    selectorToHide: false,
+                    selectorFixed: "li:first",
+               });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="text" id="search-query">
+        <ul>
+            <li>Header</li>
+            <li>Pernalonga</li>
+            <li>Patolino</li>
+            <li>Eufrazino</li>
+            <li>Lola Bunny</li>
+            <li>Frajola</li>
+            <li>Piu-Piu</li>
+            <li>Taz</li>
+        </ul>
+    </body>
+</html>
