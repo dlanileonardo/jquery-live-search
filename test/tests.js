@@ -7,6 +7,7 @@ $(document).ready(function(){
             selectorInputSearch: "#search-query",
             selectorToHide: false,
             selectorFixed: "li:first",
+            typeDelay: 100
         });
     }
 
@@ -20,25 +21,32 @@ $(document).ready(function(){
             selectorFixed: "li:first",
             ajaxCallback: function(){
                 $.get("server.html", function(data){
-                    objLiveSearch.ajaxDone(data);
+                    var search_query = objLiveSearch.getInputSearchVal();
+                    objLiveSearch.ajaxDone(data, search_query);
                 }, 'html');
             },
-
+            typeDelay: 0
         });
     }
 
-    test('teste simples, 1 ocorrencia', function () {
+    asyncTest('teste simples, 1 ocorrencia', function () {
         expect(1);
         initSimpleSearch();
         $("#search-query").val("olino").keyup();
-        equal($("ul li:visible").length, 2);
+        setTimeout(function(){
+            equal($("ul li:visible").length, 2);
+            start();
+        }, 500);
     });
 
-    test('teste simples, nao encontrando nada', function () {
+    asyncTest('teste simples, nao encontrando nada', function () {
         expect(1);
         initSimpleSearch();
         $("#search-query").val("nothing").keyup();
-        equal($("ul li:visible").length, 1);
+        setTimeout(function(){
+            equal($("ul li:visible").length, 1);
+            start();
+        }, 500);
     });
 
     asyncTest('teste ajax simples, 1 ocrrencia', function () {

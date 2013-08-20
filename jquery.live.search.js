@@ -1,3 +1,5 @@
+jQuery.fn.reverse = [].reverse;
+
 (function ($) {
 
     'use strict';
@@ -23,18 +25,34 @@
         }
 
         var bindInputSearch = function() {
-            $(opts.selectorInputSearch).bind("keyup", function(){
+            $(opts.selectorInputSearch).bind("keyup blur", function(){
                 textElement = $(this).val();
-                if ( textElement.length >= opts.minCharacters ){
-                    if ( opts.ajaxCallback ){
-                        opts.ajaxCallback.call(this);
-                    } else {
-                        filterElements(textElement);
-                    }
-                }else if ( textElement.length === 0 ){
+                // Stop previous ajax-request
+                if (this.timer) {
+                    clearTimeout(this.timer);
+                }
+
+                // Start a new ajax-request in X ms
+                this.timer = setTimeout(function () {
+                    initFilter();
+                }, opts.typeDelay);
+            });
+        };
+
+        var initFilter = function(){
+            if ( textElement.length >= opts.minCharacters ){
+                if ( opts.ajaxCallback ){
+                    opts.ajaxCallback.call(this);
+                } else {
+                    filterElements(textElement);
+                }
+            }else if ( textElement.length === 0 ){
+                if ( opts.ajaxCallback ){
+                    opts.ajaxCallback.call(this);
+                } else {
                     resetFilter();
                 }
-            });
+            }
         };
 
         var preventSubmit = function() {
@@ -53,6 +71,28 @@
                     var content = $(this).html();
                     return content.match(pattern);
                 }).parents(opts.selectorToHide).show();
+                
+                // Oculta os cabeçalhos
+                if ( opts.selectorHead ){
+                    var nextHide = true;
+                    $(opts.selectorContainer)
+                        .find(opts.selectorHead + "," + opts.selectorToHide)
+                        .reverse().each(function(){
+                        if ($(this).is(opts.selectorToHide)){
+                            if ($(this).is(':visible')){
+                                nextHide = false;
+                            }
+                        }
+                        if ($(this).is(opts.selectorHead)) {
+                            if ( nextHide ){
+                                $(this).hide();
+                            }else{
+                                $(this).show();
+                                nextHide = true;
+                            }
+                        }
+                   });
+                }
             } else {
                 $(selectorToSearch).not(opts.selectorFixed).hide();
                 $(selectorToSearch).filter(function(){
@@ -89,19 +129,28 @@
 
         var resetFilter = function() {
             if (opts.selectorToHide) {
-                $(selectorToSearch).parents(opts.selectorToHide).show();
+                $(opts.selectorContainer).find(opts.selectorToHide).show();
             } else {
                 $(selectorToSearch).show();
+            }
+            if (opts.selectorHead){
+                $(opts.selectorContainer).find(opts.selectorHead).show();
             }
         };
 
         //Public function
         this.reFilter = function() {
-            filterElements(this.textElement);
+            filterElements(textElement);
         };
 
-        this.ajaxDone = function(data) {
-            filterAjax(data);
+        this.ajaxDone = function(data, search_query) {
+            if ( search_query === textElement ){
+                filterAjax(data, search_query);
+            }
+        };
+
+        this.getInputSearchVal = function(){
+            return textElement;
         };
 
         // initialize
@@ -114,8 +163,10 @@
         selectorContainer: "table",
         selectorElementsToSearch: "td",
         selectorInputSearch: "input#search_query",
+        selectorHead: ".row-fluid.to-append",
         selectorToHide: null,
         minCharacters: 3,
+        typeDelay: 500,
         ajaxCallback: false
     };
 
