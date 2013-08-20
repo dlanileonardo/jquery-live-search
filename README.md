@@ -22,6 +22,7 @@ Requirements:
 	
 #### HTML
 	
+```html
 	<input type="text" id="search-query">
         <ul>
             <li>Header</li>
@@ -33,6 +34,7 @@ Requirements:
             <li>Piu-Piu</li>
             <li>Taz</li>
         </ul>
+```
 	
 ### Ajax Usage
 
@@ -53,13 +55,16 @@ Requirements:
 
 #### HTML
 
+```html
         <input type="text" id="search-query">
         <ul>
             <li>Header</li>
         </ul>
+```
         
 #### HTML Ajax Return:
 
+```html
 	<html>
 	    <head>
 	        <title>Ajax Content</title>
@@ -77,3 +82,4 @@ Requirements:
 	        </ul>
 	    </body>
 	</html>
+```
