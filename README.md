@@ -23,17 +23,17 @@ Requirements:
 #### HTML
 	
 ```html
-	<input type="text" id="search-query">
-        <ul>
-            <li>Header</li>
-            <li>Pernalonga</li>
-            <li>Patolino</li>
-            <li>Eufrazino</li>
-            <li>Lola Bunny</li>
-            <li>Frajola</li>
-            <li>Piu-Piu</li>
-            <li>Taz</li>
-        </ul>
+<input type="text" id="search-query">
+<ul>
+    <li>Header</li>
+    <li>Pernalonga</li>
+    <li>Patolino</li>
+    <li>Eufrazino</li>
+    <li>Lola Bunny</li>
+    <li>Frajola</li>
+    <li>Piu-Piu</li>
+    <li>Taz</li>
+</ul>
 ```
 	
 ### Ajax Usage
@@ -56,30 +56,30 @@ Requirements:
 #### HTML
 
 ```html
-        <input type="text" id="search-query">
-        <ul>
-            <li>Header</li>
-        </ul>
+<input type="text" id="search-query">
+<ul>
+    <li>Header</li>
+</ul>
 ```
         
 #### HTML Ajax Return:
 
 ```html
-	<html>
-	    <head>
-	        <title>Ajax Content</title>
-	    </head>
-	    <body>
-	        <ul>
-	            <li>Header</li>
-	            <li>Pernalonga</li>
-	            <li>Patolino</li>
-	            <li>Eufrazino</li>
-	            <li>Lola Bunny</li>
-	            <li>Frajola</li>
-	            <li>Piu-Piu</li>
-	            <li>Taz</li>
-	        </ul>
-	    </body>
-	</html>
+<html>
+    <head>
+        <title>Ajax Content</title>
+    </head>
+    <body>
+        <ul>
+            <li>Header</li>
+            <li>Pernalonga</li>
+            <li>Patolino</li>
+            <li>Eufrazino</li>
+            <li>Lola Bunny</li>
+            <li>Frajola</li>
+            <li>Piu-Piu</li>
+            <li>Taz</li>
+        </ul>
+    </body>
+</html>
 ```
