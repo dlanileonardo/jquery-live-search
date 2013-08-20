@@ -99,13 +99,13 @@ var objLiveSearch = $.liveSearch({
     </tr>
     <tr>
         <td><strong>attributeToSearch</strong></td>
-        <td>Name of the attribute that contains the content to be searched.</td>
+        <td>Name of the attribute that contains the content to be searched</td>
         <td>string</td>
         <td>data-search</td>
     </tr>
     <tr>
         <td><strong>selectorContainer</strong></td>
-        <td>Main container of elements.</td>
+        <td>Main container of elements</td>
         <td>string</td>
         <td>table</td>
     </tr>
@@ -117,7 +117,7 @@ var objLiveSearch = $.liveSearch({
     </tr>
     <tr>
         <td><strong>selectorInputSearch</strong></td>
-        <td>Selector of search field.</td>
+        <td>Selector of input field search</td>
         <td>string</td>
         <td>input#search_query</td>
     </tr>
@@ -129,7 +129,7 @@ var objLiveSearch = $.liveSearch({
     </tr>
     <tr>
         <td><strong>selectorToHide</strong></td>
-        <td>Selector element to be hidden.</td>
+        <td>Selector element to be hidden</td>
         <td>string</td>
         <td>false</td>
     </tr>
