@@ -163,8 +163,8 @@ jQuery.fn.reverse = [].reverse;
         selectorContainer: "table",
         selectorElementsToSearch: "td",
         selectorInputSearch: "input#search_query",
-        selectorHead: ".row-fluid.to-append",
-        selectorToHide: null,
+        selectorHead: false,
+        selectorToHide: false,
         minCharacters: 3,
         typeDelay: 500,
         ajaxCallback: false
