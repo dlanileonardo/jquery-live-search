@@ -31,7 +31,8 @@ Ajax Usage:
 		selectorFixed: "li:first",
 		ajaxCallback: function(){
 			$.get("helpers/ajax-content.html", function(data){
-				objLiveSearch.ajaxDone(data);
+				var search_query = objLiveSearch.getInputSearchVal();
+                objLiveSearch.ajaxDone(data, search_query);
 			}, 'html');
 		},
 	});
