@@ -99,55 +99,55 @@ var objLiveSearch = $.liveSearch({
     </tr>
     <tr>
         <td><strong>attributeToSearch</strong></td>
-        <td></td>
+        <td>Name of the attribute that contains the content to be searched.</td>
         <td>string</td>
         <td>data-search</td>
     </tr>
     <tr>
         <td><strong>selectorContainer</strong></td>
-        <td></td>
+        <td>Main container of elements.</td>
         <td>string</td>
         <td>table</td>
     </tr>
     <tr>
         <td><strong>selectorElementsToSearch</strong></td>
-        <td></td>
+        <td>Selector of elements to be searched</td>
         <td>string</td>
         <td>td</td>
     </tr>
     <tr>
         <td><strong>selectorInputSearch</strong></td>
-        <td></td>
+        <td>Selector of search field.</td>
         <td>string</td>
         <td>input#search_query</td>
     </tr>
     <tr>
         <td><strong>selectorHead</strong></td>
-        <td></td>
+        <td>Selector of the Heads</td>
         <td>string</td>
         <td>false</td>
     </tr>
     <tr>
         <td><strong>selectorToHide</strong></td>
-        <td></td>
+        <td>Selector element to be hidden.</td>
         <td>string</td>
         <td>false</td>
     </tr>
     <tr>
         <td><strong>minCharacters</strong></td>
-        <td></td>
+        <td>Minimum number of characters to trigger the search.</td>
         <td>integer</td>
         <td>3</td>
     </tr>
     <tr>
         <td><strong>typeDelay</strong></td>
-        <td></td>
+        <td>Delay time at the end of typing.</td>
         <td>integer</td>
         <td>500</td>
     </tr>
     <tr>
         <td><strong>ajaxCallback</strong></td>
-        <td></td>
+        <td>Callback function to custom ajax.</td>
         <td>callback</td>
         <td>false</td>
     </tr>
