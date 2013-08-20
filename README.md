@@ -13,17 +13,17 @@ Requirements:
 
 ```js
 $.liveSearch({
-	selectorContainer: "ul",
-	selectorElementsToSearch: "li",
-	attributeToSearch: false,
-	selectorInputSearch: "#search-query",
-	selectorToHide: false,
-	selectorFixed: "li:first",
+    selectorContainer: "ul",
+    selectorElementsToSearch: "li",
+    attributeToSearch: false,
+    selectorInputSearch: "#search-query",
+    selectorToHide: false,
+    selectorFixed: "li:first",
 });
 ```
-	
+    
 #### HTML
-	
+    
 ```html
 <input type="text" id="search-query">
 <ul>
@@ -37,23 +37,23 @@ $.liveSearch({
     <li>Taz</li>
 </ul>
 ```
-	
+    
 ### Ajax Usage
 
 ```js
 var objLiveSearch = $.liveSearch({
-	selectorContainer: "ul",
-	selectorElementsToSearch: "li",
-	attributeToSearch: false,
-	selectorInputSearch: "#search-query",
-	selectorToHide: "li",
-	selectorFixed: "li:first",
-	ajaxCallback: function(){
-		$.get("helpers/ajax-content.html", function(data){
-			var search_query = objLiveSearch.getInputSearchVal();
-        objLiveSearch.ajaxDone(data, search_query);
-		}, 'html');
-	},
+    selectorContainer: "ul",
+    selectorElementsToSearch: "li",
+    attributeToSearch: false,
+    selectorInputSearch: "#search-query",
+    selectorToHide: "li",
+    selectorFixed: "li:first",
+    ajaxCallback: function(){
+        $.get("helpers/ajax-content.html", function(data){
+            var search_query = objLiveSearch.getInputSearchVal();
+            objLiveSearch.ajaxDone(data, search_query);
+        }, 'html');
+    },
 });
 ```
 
