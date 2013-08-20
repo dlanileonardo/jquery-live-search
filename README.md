@@ -94,7 +94,7 @@ var objLiveSearch = $.liveSearch({
     <tr>
         <th>Option Name</th>
         <th>Description</th>
-        <th>Values</th>
+        <th>Type</th>
         <th>Default Value</th>
     </tr>
     <tr>
