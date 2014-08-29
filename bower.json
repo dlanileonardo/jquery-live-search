@@ -30,6 +30,8 @@
     "bower.json",
     "gruntfile.js",
     "package.json",
-    "README.md"
+    "README.md",
+    "Gruntfile.js",
+    "examples"
   ]
 }
