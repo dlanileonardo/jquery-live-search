@@ -71,7 +71,7 @@ jQuery.fn.reverse = [].reverse;
                     var content = $(this).html();
                     return content.match(pattern);
                 }).parents(opts.selectorToHide).show();
-                
+
                 // Oculta os cabeçalhos
                 if ( opts.selectorHead ){
                     var nextHide = true;
@@ -144,7 +144,7 @@ jQuery.fn.reverse = [].reverse;
         };
 
         this.ajaxDone = function(data, search_query) {
-            if ( search_query === textElement ){
+            if ( search_query === textElement && opts.ajaxFilter ){
                 filterAjax(data, search_query);
             }
         };
@@ -167,6 +167,7 @@ jQuery.fn.reverse = [].reverse;
         selectorToHide: false,
         minCharacters: 3,
         typeDelay: 500,
+        ajaxFilter: true,
         ajaxCallback: false
     };
 

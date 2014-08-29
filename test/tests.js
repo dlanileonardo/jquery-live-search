@@ -29,6 +29,25 @@ $(document).ready(function(){
         });
     }
 
+    var initAjaxSearchNoFilter = function(){
+        var objLiveSearch = $.liveSearch({
+            selectorContainer: "ul",
+            selectorElementsToSearch: "li",
+            attributeToSearch: false,
+            selectorInputSearch: "#search-query",
+            selectorToHide: "li",
+            selectorFixed: "li:first",
+            ajaxFilter: false,
+            ajaxCallback: function(){
+                $.get("server.html", function(data){
+                    var search_query = objLiveSearch.getInputSearchVal();
+                    objLiveSearch.ajaxDone(data, search_query);
+                }, 'html');
+            },
+            typeDelay: 0
+        });
+    }
+
     asyncTest('teste simples, 1 ocorrencia', function () {
         expect(1);
         initSimpleSearch();
@@ -49,7 +68,7 @@ $(document).ready(function(){
         }, 500);
     });
 
-    asyncTest('teste ajax simples, 1 ocrrencia', function () {
+    asyncTest('teste ajax simples, 1 ocorrencia', function () {
         expect(1);
         initAjaxSearch();
         $("#search-query").val("olino").keyup();
@@ -67,7 +86,17 @@ $(document).ready(function(){
             equal($("ul li:visible").length, 1);
             start();
         }, 2000);
-        
+
+    });
+
+    asyncTest('teste ajax simples, sem filtro', function () {
+        expect(1);
+        initAjaxSearchNoFilter();
+        $("#search-query").val("pica-pau").keyup();
+        setTimeout(function(){
+            equal($("ul li:visible").length, 8);
+            start();
+        }, 2000);
     });
 
 });

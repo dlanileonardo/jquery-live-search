@@ -1,4 +1,4 @@
-jquery-live-search [![Build Status](https://travis-ci.org/dlanileonardo/jquery-live-search.png?branch=master)](https://travis-ci.org/dlanileonardo/jquery-live-search) 
+jquery-live-search [![Build Status](https://travis-ci.org/dlanileonardo/jquery-live-search.png?branch=master)](https://travis-ci.org/dlanileonardo/jquery-live-search)
 ==================
 
 Description:
@@ -21,9 +21,9 @@ $.liveSearch({
     selectorFixed: "li:first",
 });
 ```
-    
+
 #### HTML
-    
+
 ```html
 <input type="text" id="search-query">
 <ul>
@@ -37,7 +37,7 @@ $.liveSearch({
     <li>Taz</li>
 </ul>
 ```
-    
+
 ### Ajax Usage
 
 ```js
@@ -65,7 +65,7 @@ var objLiveSearch = $.liveSearch({
     <li>Header</li>
 </ul>
 ```
-        
+
 #### HTML Ajax Return:
 
 ```html
@@ -144,6 +144,12 @@ var objLiveSearch = $.liveSearch({
         <td>Delay time at the end of typing.</td>
         <td>integer</td>
         <td>500</td>
+    </tr>
+    <tr>
+        <td><strong>ajaxFilter</strong></td>
+        <td>Pass false if Ajax return already filtred.</td>
+        <td>boolean</td>
+        <td>true</td>
     </tr>
     <tr>
         <td><strong>ajaxCallback</strong></td>
