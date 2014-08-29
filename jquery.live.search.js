@@ -124,7 +124,9 @@ jQuery.fn.reverse = [].reverse;
 
             $(opts.selectorContainer).append(items);
 
-            filterElements(textElement);
+            if ( opts.ajaxFilter ) {
+              filterElements(textElement);
+            }
         };
 
         var resetFilter = function() {
@@ -144,7 +146,7 @@ jQuery.fn.reverse = [].reverse;
         };
 
         this.ajaxDone = function(data, search_query) {
-            if ( search_query === textElement && opts.ajaxFilter ){
+            if ( search_query === textElement ){
                 filterAjax(data, search_query);
             }
         };
