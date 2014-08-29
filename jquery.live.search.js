@@ -104,26 +104,9 @@ jQuery.fn.reverse = [].reverse;
 
         var filterAjax = function(page){
             $(opts.selectorContainer).find(opts.selectorToHide).remove();
-            var items = [],
-                container;
-
-            // walk through the items on the next page
-            // and add them to the items array
-            container = $(opts.selectorContainer, page).eq(0);
-            if (0 === container.length) {
-                // incase the element is a root element (body > element),
-                // try to filter it
-                container = $(page).filter(opts.selectorContainer).eq(0);
-            }
-
-            if (container) {
-                container.find(opts.selectorToHide).each(function () {
-                    items.push(this);
-                });
-            }
-
-            $(opts.selectorContainer).append(items);
-
+            var newContent = $(page).filter(opts.selectorContainer).html();
+            var container = $(opts.selectorContainer);
+            container.html(newContent);
             if ( opts.ajaxFilter ) {
               filterElements(textElement);
             }
