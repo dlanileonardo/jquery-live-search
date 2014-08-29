@@ -24,7 +24,7 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'build/jquery.live.search-<%= pkg.version %>.min.js': 'jquery.live.search.js'
+                    'jquery.live.search.min.js': 'jquery.live.search.js'
                 }
             }
         },

@@ -1,6 +1,6 @@
 {
   "name": "jquery.live.search",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "A simple, lightweight jQuery plugin for implement live-search.",
   "main": "Gruntfile.js",
   "directories": {
