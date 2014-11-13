@@ -158,3 +158,7 @@ var objLiveSearch = $.liveSearch({
         <td>false</td>
     </tr>
 </table>
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dlanileonardo/jquery-live-search/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
